@@ -77,8 +77,51 @@ img {
 	left: 30px;
 }
 
+.main-nav__separator {
+	flex-grow: 2;
+	margin: 0 3rem;
+	border-bottom: 2px solid #453188;
+	align-self: center;
+}
+
+.logo-wrapper {
+	display: flex;;
+	align-items: center;
+}
+
+.logo-wrapper:hover {
+	text-decoration: none;
+}
+
+.logo-wrapper__text {
+	margin-left: 1rem;
+}
+
+.logo-wrapper__company-name {
+	color: #00080c;
+	font-size: 1.5rem;
+	line-height: 1;
+
+	margin-bottom: 0.5rem;
+}
+
+.logo-wrapper__slogan {
+	margin-bottom: 0;
+	color: #5c5c5c;
+	font-size: 1rem;
+}
+
 .logo {
-	display: block;
+	vertical-align: bottom;
+	height: 100px;
+}
+
+.logo__left {
+	fill: #5941A9;
+}
+
+.logo__right {
+	fill: #034748;
 }
 
 .menu {
@@ -118,6 +161,10 @@ img {
 
 .menu__link:active {
 	background-color: #e7e7e7;
+}
+
+.hero-area {
+	
 }
 
 /* ==== Overrides, utilities, etc. ==== */
