@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', e => {
-    	
+
 });
 
 //js for the scroll back up button
-backUpButton = document.getElementsByClassName("backUp");
+var backUpButton = document.getElementsByClassName("backUpBtn");
 
 window.onscroll = function() {scrollDown()};
 
@@ -15,7 +15,7 @@ function scrollDown() {
   }
 }
 
-function scrollToTop() {
+function scrollTop() {
   document.body.scrollToTop = 0; 
   document.documentElement.scrollToTop = 0; 
 } 
