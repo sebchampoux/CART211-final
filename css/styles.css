@@ -230,3 +230,54 @@ img {
 }
 
 /* ==== Overrides, utilities, etc. ==== */
+
+/* ==== Vision CSS ==== */
+
+/* Scroll back up button*/
+
+.backUp {
+display: none;
+  position: fixed; 
+  bottom: 1%; 
+  right: 2%; 
+  z-index: 99; 
+  border: none; 
+  outline: none; 
+  background-color: black; 
+  color: white; 
+  cursor: pointer; 
+  padding: 1%; 
+  border-radius: 10px; 
+  font-size: 18px; 
+}
+
+#backUp:hover {
+  background-color: #555; 
+}
+
+/* top menu*/
+
+.vision-navbar {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	height: auto;
+	width: 100%;
+}
+.vision-navbar a {
+	justify-content: center;
+	align-items: center;
+	color: #555;
+	background-color: #e7e7e7;
+	border-color: #e7eeee;
+	border-width: 1px;
+	width: auto;
+	padding: 1.5%;
+	margin: 2% 1%;
+	text-align: center;
+}
+
+.vision-navbar a:hover {
+	background-color: #d8d8d8;
+}
