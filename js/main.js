@@ -1,21 +1,26 @@
 document.addEventListener('DOMContentLoaded', e => {
 
-});
 
 //js for the scroll back up button
-var backUpButton = document.getElementsByClassName("backUpBtn");
+var backUpButton = document.getElementById("backUpBtn");
 
 window.onscroll = function() {scrollDown()};
 
 function scrollDown() {
-  if (document.body.scrollToTop > 20 || document.documentElement.scrollToTop > 20) {
+  if (window.scrollY > 20 ) {
     backUpButton.style.display = "block";
-  } else {
+  } 
+  else {
     backUpButton.style.display = "none";
   }
 }
 
-function scrollTop() {
-  document.body.scrollToTop = 0; 
-  document.documentElement.scrollToTop = 0; 
-} 
+backUpButton.addEventListener("click",goToTop);
+
+function goToTop() {
+  window.scrollTo({top:0}); 
+}
+
+});
+
+ 

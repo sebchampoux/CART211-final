@@ -235,11 +235,11 @@ img {
 
 /* Scroll back up button*/
 
-.backUpBtn {
+#backUpBtn {
 display: none;
   position: fixed; 
-  bottom: 1%; 
-  right: 2%; 
+  bottom: 20px; 
+  right: 20px; 
   z-index: 99; 
   border: none; 
   outline: none; 
@@ -248,11 +248,15 @@ display: none;
   cursor: pointer; 
   padding: 1%; 
   border-radius: 10px; 
-  font-size: 18px; 
+  font-size: 20px; 
 }
 
-.backUpBtn:hover {
+#backUpBtn:hover {
   background-color: #555; 
+}
+
+body.vision {
+	z-index: 1;
 }
 
 .vision-content-container {
