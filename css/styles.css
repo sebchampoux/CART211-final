@@ -24,6 +24,11 @@ img {
 }
 
 /* ==== Components ==== */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
 .button {
 	display: inline-block;
 	padding: 10px 30px;
@@ -229,7 +234,54 @@ img {
 	text-align: center;
 }
 
-/* ==== Overrides, utilities, etc. ==== */
+.half-half {
+	padding: 60px 0;
+	background-color: #fff;
+	position: relative;
+}
+
+.half-half__left {
+	padding: 2rem;
+	background-color: #453188;
+	width: 60%;
+
+	position: relative;
+	z-index: 2;
+}
+
+.half-half__right {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 100%;
+	width: 50%;
+}
+
+.half-half__image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.half-half__title {
+	color: #fff;
+	font-size: 2.5rem;
+	text-transform: uppercase;
+
+	padding-bottom: 1rem;
+	position: relative;
+}
+
+.half-half__title::after {
+	content: '';
+	display: block;
+	position: absolute;
+}
+
+.half-half__text {
+	color: #fff;
+}
 
 /* ==== Vision CSS ==== */
 
