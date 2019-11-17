@@ -234,32 +234,37 @@ img {
 	text-align: center;
 }
 
+.hero-area__trees-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 105%;
+}
+
 .half-half {
 	padding: 60px 0;
 	background-color: #fff;
 	position: relative;
 }
 
-.half-half__left {
-	padding: 2rem;
+.half-half__content {
+	padding: 3.5rem;
 	background-color: #453188;
-	width: 60%;
+	width: 65%;
 
 	position: relative;
 	z-index: 2;
-}
 
-.half-half__right {
-	position: absolute;
-	right: 0;
-	top: 0;
-	height: 100%;
-	width: 50%;
+	box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.4);
 }
 
 .half-half__image {
-	width: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50%;
 	height: 100%;
+
 	object-fit: cover;
 	object-position: center;
 }
@@ -281,6 +286,57 @@ img {
 
 .half-half__text {
 	color: #fff;
+	margin-bottom: 2.5rem;
+	line-height: 1.75;
+}
+
+.half-half__btn-wrapper {
+	text-align: center;
+}
+
+.stats {
+	background-color: #453188;
+	padding: 4.5rem 0;
+}
+
+.stats__title {
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 2rem;
+	margin-bottom: 2rem;
+}
+
+.stats__stats-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.stat {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 2rem;
+	width: 32%;
+}
+
+.stat__icon {
+	display: block;
+	margin-bottom: 2rem;
+	height: 6rem;
+}
+
+.stat__number {
+	font-size: 3rem;
+	color: #ffffff;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+	line-height: 1;
+}
+
+.stat__label {
+	color: #ffffff;
+	text-align: center;
 }
 
 /* ==== Vision CSS ==== */
