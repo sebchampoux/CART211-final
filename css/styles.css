@@ -249,13 +249,24 @@ img {
 
 .half-half__content {
 	padding: 3.5rem;
-	background-color: #453188;
 	width: 65%;
 
 	position: relative;
 	z-index: 2;
+}
 
+.half-half__content--shadow {
 	box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.4);
+}
+
+.half-half__content-bg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	background-color: #453188;
 }
 
 .half-half__image {
@@ -337,6 +348,24 @@ img {
 .stat__label {
 	color: #ffffff;
 	text-align: center;
+}
+
+.animated-image {
+	overflow: hidden;
+}
+
+.animated-image__inner {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+.animated-image__img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 
 /* ==== Vision CSS ==== */

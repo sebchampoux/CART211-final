@@ -13,7 +13,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 	<script src="js/main.js"></script>
 </head>
-<body>
+<body class="home-page">
 	<nav class="main-nav main-nav--inverted">
 		<a class="logo-wrapper" href="javascript:;">
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -90,6 +90,7 @@
 	<section class="half-half">
 		<div class="container">
 			<div class="half-half__content">
+				<div class="half-half__content-bg"></div>
 				<h1 class="half-half__title">What differentiates us</h1>
 				<p class="half-half__text">Adaptogen woke yr lumbersexual. Typewriter man bun unicorn, kale chips trust
 					fund actually dreamcatcher freegan etsy. Hammock unicorn viral normcore paleo chambray YOLO af
@@ -99,7 +100,11 @@
 					<a href="vision.html" class="button button--primary">Learn more</a>
 				</div>
 			</div>
-			<img src="imgs/about-us.jpg" alt="Corridor in a mine" class="half-half__image">
+			<div class="animated-image half-half__image">
+				<div class="animated-image__inner">
+					<img src="imgs/about-us.jpg" alt="Corridor in a mine" class="animated-image__img">
+				</div>
+			</div>
 		</div>
 	</section>
 </body>
