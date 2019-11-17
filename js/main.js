@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', e => {
 
+//fade effect
+AOS.init();
 
 //js for the scroll back up button
 var backUpButton = document.getElementById("backUpBtn");
@@ -21,6 +23,6 @@ function goToTop() {
   window.scrollTo({top:0}); 
 }
 
-});
 
- 
+
+})
