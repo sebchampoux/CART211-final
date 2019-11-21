@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', e => {
 
 
 function homePage() {
+	homePageAnims();
+	homePageNewsletter();
+}
+
+function homePageAnims() {
 	let heroTl = new TimelineMax({ paused: true });
 	var statsTl = new TimelineMax({ paused: true });
 
@@ -35,6 +40,23 @@ function tlAnimatedImage(animatedImageObject) {
 	tl.from(inner, duration, { x: '-100%' }, 'img-in');
 	tl.from(img, duration, { x: '100%' }, 'img-in');
 	return tl;
+}
+
+function homePageNewsletter() {
+	function inputIsEmpty(input) {
+		return input.value === "" || input.value === null || input.value === undefined;
+	}
+
+	var inputs = document.querySelectorAll('.input');
+	inputs.forEach(input => {
+		input.addEventListener('blur', e => {
+			if (inputIsEmpty(input)) {
+				input.classList.toggle('input--not-empty', false);
+			} else {
+				input.classList.toggle('input--not-empty', true);
+			}
+		});
+	});
 }
 
 function visionPage() {
