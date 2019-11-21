@@ -386,6 +386,7 @@ img {
   padding: 15px;
   border-radius: 10px;
   font-size: 20px;
+
 }
 
 #backUpBtn:hover {
@@ -437,6 +438,7 @@ h3 {
 .russia {
 	top: 35%;
 	left: 59%;
+	opacity: 1;
 }
 
 .canada {
