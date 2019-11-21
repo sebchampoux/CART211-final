@@ -442,11 +442,15 @@ h3 {
 .canada {
 	top: 31%;
 	left: 16%;
+	z-index: 2;
 
 }
 
 .canada-pin-class {
 	opacity: 1;
+	z-index: 2;
+	position: absolute;
+
 }
 
 .canada-beaver-class {
@@ -455,8 +459,9 @@ h3 {
 
 .canada-beaver-show {
 	opacity: 1;
-	top: 25%;
-	left: 16%;
+	z-index: 1;
+	position: relative;
+	
 }
 
 
@@ -470,8 +475,8 @@ h3 {
 }
 
 .usa1-hover {
-	top: 42%;
-	left: 75%;
+	top: 30%;
+	left: 64%;
 }
 
 .usa2 {
@@ -480,14 +485,20 @@ h3 {
 }
 
 .usa2-hover {
-	top: 40%;
-	left: 80%;
+	top: 28%;
+	left: 72%;
 }
 
 .africa {
-	top: 50%;
-	left: 50%;
+	top: 59%;
+	left: 52%;
 }
+
+.australia {
+	top: 74%;
+	left: 80%;
+}
+
 .map-info-text {
 	flex: 1;
 	max-width: 27%;

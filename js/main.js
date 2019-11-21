@@ -44,6 +44,25 @@ $('#canada1').click(function() {
 
 });
 
+/*random location pin*/
+
+var africa = document.getElementById("africa1");
+africa.addEventListener("click", randomPosition);
+
+
+function randomPosition (){
+	
+var posx = (Math.random() * 100) + 1;
+var posy = (Math.random() * 100) + 1;
+africa.style.top = posy + '%';
+africa.style.left = posx + '%';
+}
+
+$('#australia1').click(function() {
+	$(this).toggleClass('australia-fun');
+  });
+
+
 
 
 
