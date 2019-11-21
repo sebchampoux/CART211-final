@@ -442,28 +442,26 @@ h3 {
 .canada {
 	top: 31%;
 	left: 16%;
-	z-index: 2;
+	width: 100%;
+}
 
+.canada-click {
+
+	width: 200%;
 }
 
 .canada-pin-class {
 	opacity: 1;
-	z-index: 2;
-	position: absolute;
-
 }
 
 .canada-beaver-class {
 	opacity: 0;
 }
-
 .canada-beaver-show {
 	opacity: 1;
-	z-index: 1;
-	position: relative;
-	
+	top: 10%;
+	left: 16%;
 }
-
 
 .canada-pin-hide {
 	opacity: 0;
@@ -475,8 +473,8 @@ h3 {
 }
 
 .usa1-hover {
-	top: 30%;
-	left: 64%;
+	top: 42%;
+	left: 75%;
 }
 
 .usa2 {
@@ -485,20 +483,14 @@ h3 {
 }
 
 .usa2-hover {
-	top: 28%;
-	left: 72%;
-}
-
-.africa {
-	top: 59%;
-	left: 52%;
-}
-
-.australia {
-	top: 74%;
+	top: 40%;
 	left: 80%;
 }
 
+.africa {
+	top: 50%;
+	left: 50%;
+}
 .map-info-text {
 	flex: 1;
 	max-width: 27%;
@@ -508,79 +500,40 @@ h3 {
 	list-style: none;
 }
 
-.footer {
-	padding: 3rem 0 0.5rem;
-	background-color: #e7e7e7;
-}
-
-.footer-copyright {
-	text-align: center;
-	font-size: 0.8rem;
-	opacity: 0.7;
-}
-
 .footer-container {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	flex-wrap: nowrap;
-	justify-content: space-between;
-}
+	justify-content: space-around;
 
-.footer-element-title {
-	text-transform: uppercase;
+	width: 100%;
+	height: 45%;
+	min-height: 15rem;
+	background-color: #e7e7e7;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .footer-element {
-	padding: 0 1rem;
+
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
 	color: #5c5c5c;
+	width: auto;
 	text-decoration: none;
 }
 
-.footer-element:first-child {
-	padding-left: 0;
-}
-
-.footer-element:last-child {
-	padding-right: 0;
-}
-
-.socials {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-
-	display: flex;
-}
-
-.socials-item {
-	margin: 0;
-	padding: 0;
-}
-
-.socials-link {
-	display: block;
-	padding: 10px;
-}
-
-.socials-item:first-child .socials-link {
-	padding-left: 0;
-}
-
-.socials-icon {
-	fill: #00080c;
-	width: 2.5rem;
-}
-
-.socials-link:hover .socials-icon {
-	fill: #453188;
-}
-
-.quick-links {
-	list-style-type: none;
-	padding: 0;
+.footer-element a {
+	align-items: center;
+	justify-content: start;
 }
 
 .vision-content-container {
+
 	align-items: center;
 	display: flex;
 	flex-direction: column;

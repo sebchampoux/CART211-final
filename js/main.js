@@ -113,8 +113,8 @@ function visionPage() {
 
 	window.onscroll = function () { scrollDown() };
 	backUpButton.addEventListener("click", goToTop);
-}
-//fade effect
+
+	//fade effect
 AOS.init();
 
 //js for the scroll back up button
@@ -175,5 +175,9 @@ africa.style.left = posx + '%';
 $('#australia1').click(function() {
 	$(this).toggleClass('australia-fun');
   });
+
+
+
+}
 
 
