@@ -148,14 +148,8 @@ $('#usa-2').click(function() {
 });
 
 $('#canada-pin').click(function() {
-  $(this).toggleClass('canada-pin-hide');
-  $('#canada-beaver').toggleClass('canada-beaver-show');
-  $('#canada1').toggleClass('canada-click')
-});
-
-$('#canada1').click(function() {
-  $(this).toggleClass('canada-click');
-
+	$(this).toggleClass('canada-pin-change');
+	$('#canada-beaver').toggleClass('canada-beaver-change');
 });
 
 /*random location pin*/

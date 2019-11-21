@@ -386,6 +386,7 @@ img {
   padding: 15px;
   border-radius: 10px;
   font-size: 20px;
+
 }
 
 #backUpBtn:hover {
@@ -437,34 +438,40 @@ h3 {
 .russia {
 	top: 35%;
 	left: 59%;
+	opacity: 1;
 }
 
 .canada {
 	top: 31%;
 	left: 16%;
 	width: 100%;
-}
-
-.canada-click {
-
-	width: 200%;
+	z-index: 3;
 }
 
 .canada-pin-class {
+	z-index: 4;
 	opacity: 1;
+	position: absolute;
+}
+
+.canada-pin-change {
+	opacity: 0;
+	z-index: 8;
+	position: absolute;
 }
 
 .canada-beaver-class {
 	opacity: 0;
-}
-.canada-beaver-show {
-	opacity: 1;
-	top: 10%;
-	left: 16%;
+	z-index: 3;
+	position: relative;
 }
 
-.canada-pin-hide {
-	opacity: 0;
+.canada-beaver-change {
+	opacity: 1;
+	z-index: 7;
+	position: relative;
+	width: 200%;
+	overflow: visible;
 }
 
 .usa1 {
@@ -473,8 +480,8 @@ h3 {
 }
 
 .usa1-hover {
-	top: 42%;
-	left: 75%;
+	top: 29%;
+	left: 63%;
 }
 
 .usa2 {
@@ -483,14 +490,25 @@ h3 {
 }
 
 .usa2-hover {
-	top: 40%;
-	left: 80%;
+	top: 30%;
+	left: 71%;
 }
 
 .africa {
-	top: 50%;
+	top: 57%;
 	left: 50%;
 }
+
+.australia {
+	top: 73%;
+	left: 80%;
+}
+
+.australia-fun {
+	transform: rotate(180deg) translateY(-100%);
+
+}
+
 .map-info-text {
 	flex: 1;
 	max-width: 27%;
