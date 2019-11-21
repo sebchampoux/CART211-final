@@ -23,6 +23,23 @@ function goToTop() {
   window.scrollTo({top:0}); 
 }
 
+//map pins
+
+$('#usa-1').click(function() {
+  $(this).toggleClass('usa1-hover');
+});
+
+$('#usa-2').click(function() {
+  $(this).toggleClass('usa2-hover');
+});
+
+$('#canada-pin').click(function() {
+  $(this).toggleClass('canada-pin-hide');
+  $('#canada-beaver').toggleClass('canada-beaver-show');
+  $('p#map-info').toggleClass('canada-click');
+});
 
 
-})
+
+});
+
