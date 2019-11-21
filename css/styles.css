@@ -231,92 +231,10 @@ img {
 
 /* ==== Overrides, utilities, etc. ==== */
 
-/* ==== Vision CSS ==== */
-
-/* Scroll back up button*/
-
-#backUpBtn {
-	display: none;
-  position: fixed; 
-  bottom: 20px; 
-  right: 20px; 
-  z-index: 99; 
-  border: none; 
-  outline: none; 
-  background-color:#d8d8d8; 
-  color: #5c5c5c; 
-  cursor: pointer; 
-  padding: 15px; 
-  border-radius: 10px; 
-  font-size: 20px; 
-}
-
-#backUpBtn:hover {
-  background-color: #555; 
-}
-
-h3 {
-	font-size:2.5vw;
-}
-
-.map-image {
-	width: auto;
-	z-index: 2;
-	position: relative;
-}
-
-.map-info-container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	list-style: none;
-	width: 100%;
-	align-items: center;
-}
-
-.map-info {
-	display: flex;
-	flex: 3;
-	max-width: 65%;
-	width: auto;
-	list-style: none;
-	padding-right: 20px;
-	z-index: 2;
-	position: relative;
-}
-
-.map-info p {
-	z-index: 4;
-	width: 6%;
-	position: absolute;
-	overflow: visible;
-}
 
 
 
 
-/*pins*/
-
-.russia {
-	top: 35%;
-	left: 59%;
-}
-
-.canada {
-	top: 31%;
-	left: 16%;
-	width: 100%;
-}
-
-.canada-click {
-
-	width: 200%;
-}
-
-.canada-pin-class {
-	opacity: 1;
-}
 
 .half-half__text {
 	color: #fff;
@@ -391,9 +309,100 @@ h3 {
 	object-position: center;
 }
 
+
+/* ==== Vision CSS ==== */
+
+/* Scroll back up button*/
+
+#backUpBtn {
+	display: none;
+  position: fixed; 
+  bottom: 20px; 
+  right: 20px; 
+  z-index: 99; 
+  border: none; 
+  outline: none; 
+  background-color:#d8d8d8; 
+  color: #5c5c5c; 
+  cursor: pointer; 
+  padding: 15px; 
+  border-radius: 10px; 
+  font-size: 20px; 
+}
+
+#backUpBtn:hover {
+  background-color: #555; 
+}
+
+h3 {
+	font-size:2.5vw;
+}
+
+.map-image {
+	width: auto;
+	z-index: 2;
+	position: relative;
+}
+
+.map-info-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	list-style: none;
+	width: 100%;
+	align-items: center;
+}
+
+.map-info {
+	display: flex;
+	flex: 3;
+	max-width: 65%;
+	width: auto;
+	list-style: none;
+	padding-right: 20px;
+	z-index: 2;
+	position: relative;
+}
+
+.map-info p {
+	z-index: 4;
+	width: 6%;
+	position: absolute;
+	overflow: visible;
+}
+
+
+
+/*pins*/
+
+.russia {
+	top: 35%;
+	left: 59%;
+}
+
+.canada {
+	top: 31%;
+	left: 16%;
+	width: 100%;
+}
+
+.canada-click {
+
+	width: 200%;
+}
+
+.canada-pin-class {
+	opacity: 1;
+}
+
+.canada-beaver-class {
+	opacity: 0;
+}
 .canada-beaver-show {
 	opacity: 1;
-	width: auto;
+	top: 10%;
+	left: 16%;
 }
 
 .canada-pin-hide {
