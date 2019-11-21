@@ -384,12 +384,7 @@ h3 {
 .canada {
 	top: 31%;
 	left: 16%;
-	width: 100%;
-}
 
-.canada-click {
-
-	width: 200%;
 }
 
 .canada-pin-class {
@@ -399,11 +394,13 @@ h3 {
 .canada-beaver-class {
 	opacity: 0;
 }
+
 .canada-beaver-show {
 	opacity: 1;
-	top: 10%;
+	top: 25%;
 	left: 16%;
 }
+
 
 .canada-pin-hide {
 	opacity: 0;

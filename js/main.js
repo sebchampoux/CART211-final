@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', e => {
-<<<<<<< HEAD
 
 //fade effect
 AOS.init();
@@ -37,21 +36,21 @@ $('#usa-2').click(function() {
 $('#canada-pin').click(function() {
   $(this).toggleClass('canada-pin-hide');
   $('#canada-beaver').toggleClass('canada-beaver-show');
-  $('p#map-info').toggleClass('canada-click');
+  
 });
 
 
 
-});
 
-=======
+
+
 	var body = document.querySelector('body');
 	if (body.classList.contains('home-page')) {
 		homePage();
 	} else if (body.classList.contains('vision')) {
 		visionPage();
 	}
-});
+
 
 function homePage() {
 	let heroTl = new TimelineMax({ paused: true });
@@ -100,4 +99,4 @@ function visionPage() {
 	window.onscroll = function () { scrollDown() };
 	backUpButton.addEventListener("click", goToTop);
 }
->>>>>>> a254f935911eed1c0cf6a43571bd9afe42f4bef1
+});
