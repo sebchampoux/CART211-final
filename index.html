@@ -11,57 +11,25 @@
 	<link rel="stylesheet" href="css/styles.css">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 	<script src="js/main.js"></script>
 </head>
 <body class="home-page">
-	<nav class="main-nav main-nav--inverted">
-		<a class="logo-wrapper" href="javascript:;">
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-				viewBox="0 0 191 162" xml:space="preserve" class="logo">
-				<polygon class="logo__left"
-					points="47.37,80.37 77.31,40.03 72.53,33.84 38.2,80.98 98.11,162.57 84.01,162.57 23.53,80.98 65.62,24.87
-				60.81,18.64 13.75,81.59 74.76,162.57 61.12,162.57 0,81.29 61.12,0 91.06,40.34 61.12,81.29 121.62,162.57 107.91,162.57 " />
-				<polygon class="logo__right" points="191.3,81.29 130.18,162.57 123.43,153.35 177.55,81.59 130.49,18.64 125.66,25.07 167.77,81.59
-				118.9,147.15 111.44,136.95 153.71,81.59 118.56,34.54 113.98,40.64 143.93,81.59 106.7,130.46 100.23,121.62 130.18,81.29
-				100.23,40.34 130.18,0 " />
-			</svg>
-			<div class="logo-wrapper__text">
-				<h1 class="logo-wrapper__company-name">Köttbullar &amp; sons.</h1>
-				<h2 class="logo-wrapper__slogan">Mining for the New Millenia</h2>
-			</div>
-		</a>
-		<div class="main-nav__separator"></div>
-		<ul class="menu">
-			<li class="menu__item">
-				<a href="index.html" class="menu__link">Home</a>
-			</li>
-			<li class="menu__item">
-				<a href="vision.html" class="menu__link">Our vision</a>
-			</li>
-			<li class="menu__item">
-				<a href="team.html" class="menu__link">Our team</a>
-			</li>
-			<li class="menu__item">
-				<a href="achievements.html" class="menu__link">Achievements</a>
-			</li>
-			<li class="menu__item">
-				<a href="careers.html" class="menu__link">Careers</a>
-			</li>
-		</ul>
-	</nav>
+	<div class="js-nav-placeholder"></div>
 	<header class="hero-area">
 		<div class="hero-area__video-wrapper">
 			<video class="featured-video" autoplay loop muted poster="">
 				<source src="imgs/header__video.mp4" type="video/mp4">
 			</video>
 		</div>
-		<div class="hero-text-box">
-			<h1 class="hero-text-box__title">We mine because<br>we don't care</h1>
-			<p class="hero-text-box__text">Like screw the environment really? Biodiesel gochujang keffiyeh prism tousled
+		<div class="text-box text-box--hero">
+			<h1 class="text-box__title">We mine because<br>we don't care</h1>
+			<p class="text-box__text">Like screw the environment really? Biodiesel gochujang keffiyeh prism tousled
 				pitchfork authentic viral semiotics pop-up copper mug neutra.
-				<p class="hero-text-box__btn-wrapper">
-					<a href="javascript:;" class="button button--primary">Learn more</a>
-				</p>
+			</p>
+			<div class="text-box__btn-wrapper">
+				<a href="javascript:;" class="button button--primary">Learn more</a>
+			</div>
 		</div>
 		<img class="hero-area__trees-overlay" src="imgs/trees-skyline.svg" alt="Trees overlay">
 	</header>
@@ -77,7 +45,8 @@
 				<article class="stat">
 					<img class="stat__icon" src="imgs/tint-solid.svg" alt="Dollar icon">
 					<p class="stat__number">10M</p>
-					<p class="stat__label">Gallons of polluted water that will be dumped into your community's rivers</p>
+					<p class="stat__label">Gallons of polluted water that will be dumped into your community's rivers
+					</p>
 				</article>
 				<article class="stat">
 					<img class="stat__icon" src="imgs/dollar-sign-solid.svg" alt="Dollar icon">
@@ -107,5 +76,43 @@
 			</div>
 		</div>
 	</section>
+	<section class="half-half half-half--inverted">
+		<div class="container">
+			<div class="half-half__content">
+				<div class="half-half__content-bg"></div>
+				<h1 class="half-half__title">Why you should care</h1>
+				<p class="half-half__text">Asymmetrical put a bird on it cliche bespoke stumptown beard vinyl selvage
+					craft beer yr tote bag typewriter chia. Mumblecore poke cold-pressed flexitarian, cred typewriter
+					wayfarers. Direct trade everyday carry austin DIY paleo salvia pop-up butcher.</p>
+				<p class="half-half__text">Fashion axe post-ironic irony air plant bicycle rights. Selvage seitan palo
+					santo helvetica, butcher man braid four loko edison bulb gastropub lo-fi raw denim succulents
+					microdosing subway tile.</p>
+			</div>
+			<div class="animated-image half-half__image">
+				<div class="animated-image__inner">
+					<img src="imgs/why-you-care.jpg" alt="Aerial view of our mine" class="animated-image__img">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="newsletter">
+		<div class="container newsletter__container">
+			<div class="text-box text-box--newsletter">
+				<h1 class="text-box__title">Why don't you sign up for our newsletter?</h1>
+				<p class="text-box__text">Don't you just love receiving a ton of pointless emails from hip corporations?  We don't either but like please sign up anyway.</p>
+				<form action="" class="form">
+					<div class="input-wrapper form__input-wrapper">
+						<input type="email" id="email" name="email" class="input input-wrapper__input" required>
+						<label for="email" class="input-wrapper__label">Your email</label>
+					</div>
+					<div class="text-box__btn-wrapper">
+						<button type="submit" class="button button--accent">Sign up</button>
+					</div>
+				</form>
+			</div>
+			<img src="imgs/gmail-phone-mockup-gsuite-page-red.png" alt="Why don't you subscribe your mom as well?" class="newsletter__image">
+		</div>
+	</section>
+	<div class="js-footer-placeholder"></div>
 </body>
 </html>
