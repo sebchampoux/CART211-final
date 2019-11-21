@@ -255,8 +255,14 @@ img {
   background-color: #555; 
 }
 
+h3 {
+	font-size:2.5vw;
+}
+
 .map-image {
 	width: auto;
+	z-index: 2;
+	position: relative;
 }
 
 .map-info-container {
@@ -266,14 +272,96 @@ img {
 	justify-content: space-around;
 	list-style: none;
 	width: 100%;
+	align-items: center;
 }
 
 .map-info {
-	align-items: center;
+	display: flex;
+	flex: 3;
+	max-width: 65%;
+	width: auto;
+	list-style: none;
+	padding-right: 20px;
+	z-index: 2;
+	position: relative;
+}
+
+.map-info p {
+	z-index: 4;
+	width: 6%;
+	position: absolute;
+	overflow: visible;
+}
+
+
+
+
+/*pins*/
+
+.russia {
+	top: 35%;
+	left: 59%;
+}
+
+.canada {
+	top: 31%;
+	left: 16%;
+	width: 100%;
+}
+
+.canada-click {
+
+	width: 200%;
+}
+
+.canada-pin-class {
+	opacity: 1;
+}
+
+.canada-beaver-class {
+	opacity: 0;
+}
+
+.canada-beaver-show {
+	opacity: 1;
 	width: auto;
 }
+
+.canada-pin-hide {
+	opacity: 0;
+}
+
+.usa1 {
+	top: 45%;
+	left: 10%;
+}
+
+.usa1-hover {
+	top: 42%;
+	left: 75%;
+}
+
+.usa2 {
+	top: 45%;
+	left: 18%;
+}
+
+.usa2-hover {
+	top: 40%;
+	left: 80%;
+}
+
+.africa {
+	top: 50%;
+	left: 50%;
+}
 .map-info-text {
-	width: 20%;
+	flex: 1;
+	max-width: 27%;
+	width: auto;
+	text-align: justify;
+	font-size: 1.6vw;
+	list-style: none;
 }
 
 .footer-container {
@@ -323,10 +411,9 @@ img {
 }
 
 .vision-content-element {
-	flex: 1 90%;
-	padding: 1.5rem 3rem;
-	text-align: left;
-	height: 30%;
+
+	padding: 2.5%;
+	height: 95vh;
 	background-color: #f9f9f9;
 	width: 90%;
 	margin: 4%;
