@@ -36,7 +36,7 @@ $('#usa-2').click(function() {
 $('#canada-pin').click(function() {
   $(this).toggleClass('canada-pin-hide');
   $('#canada-beaver').toggleClass('canada-beaver-show');
-  $('p#map-info').toggleClass('canada-click');
+  $('#map-info').toggleClass('canada-click');
 });
 
 
