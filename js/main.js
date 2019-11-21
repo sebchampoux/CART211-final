@@ -95,14 +95,8 @@ function homePageNewsletter() {
 }
 
 function visionPage() {
-
-	//fade effect
-	AOS.init();
-
 	//js for the scroll back up button
 	var backUpButton = document.getElementById("backUpBtn");
-
-	window.onscroll = function () { scrollDown() };
 
 	function scrollDown() {
 		if (window.scrollY > 20) {
@@ -113,26 +107,73 @@ function visionPage() {
 		}
 	}
 
-	backUpButton.addEventListener("click", goToTop);
-
 	function goToTop() {
 		window.scrollTo({ top: 0 });
 	}
 
-	//map pins
-
-	$('#usa-1').click(function () {
-		$(this).toggleClass('usa1-hover');
-	});
-
-	$('#usa-2').click(function () {
-		$(this).toggleClass('usa2-hover');
-	});
-
-	$('#canada-pin').click(function () {
-		$(this).toggleClass('canada-pin-hide');
-		$('#canada-beaver').toggleClass('canada-beaver-show');
-		$('p#map-info').toggleClass('canada-click');
-	});
-
+	window.onscroll = function () { scrollDown() };
+	backUpButton.addEventListener("click", goToTop);
 }
+//fade effect
+AOS.init();
+
+//js for the scroll back up button
+var backUpButton = document.getElementById("backUpBtn");
+
+window.onscroll = function() {scrollDown()};
+
+function scrollDown() {
+  if (window.scrollY > 20 ) {
+    backUpButton.style.display = "block";
+  } 
+  else {
+    backUpButton.style.display = "none";
+  }
+}
+
+backUpButton.addEventListener("click",goToTop);
+
+function goToTop() {
+  window.scrollTo({top:0}); 
+}
+
+//map pins
+
+$('#usa-1').click(function() {
+  $(this).toggleClass('usa1-hover');
+});
+
+$('#usa-2').click(function() {
+  $(this).toggleClass('usa2-hover');
+});
+
+$('#canada-pin').click(function() {
+  $(this).toggleClass('canada-pin-hide');
+  $('#canada-beaver').toggleClass('canada-beaver-show');
+  $('#canada1').toggleClass('canada-click')
+});
+
+$('#canada1').click(function() {
+  $(this).toggleClass('canada-click');
+
+});
+
+/*random location pin*/
+
+var africa = document.getElementById("africa1");
+africa.addEventListener("click", randomPosition);
+
+
+function randomPosition (){
+	
+var posx = (Math.random() * 100) + 1;
+var posy = (Math.random() * 100) + 1;
+africa.style.top = posy + '%';
+africa.style.left = posx + '%';
+}
+
+$('#australia1').click(function() {
+	$(this).toggleClass('australia-fun');
+  });
+
+
