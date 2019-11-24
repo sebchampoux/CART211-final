@@ -216,16 +216,14 @@ img {
 	object-position: center;
 }
 
-.hero-text-box {
+.text-box {
 	color: #fff;
-	width: 35%;
-	padding: 2rem 6rem 2rem 2rem;
+	padding: 2rem;
 	border: 2px solid #453188;
-	border-right: none;
 	box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.4);
 }
 
-.hero-text-box__title {
+.text-box__title {
 	line-height: 1.2;
 	font-size: 3rem;
 	text-transform: uppercase;
@@ -233,12 +231,29 @@ img {
 	margin-top: -4rem;
 }
 
-.hero-text-box__text {
+.text-box__text {
 	margin-bottom: 2rem;
 }
 
-.hero-text-box__btn-wrapper {
+.text-box__btn-wrapper {
 	text-align: center;
+}
+
+.text-box--hero {
+	border-right: none;
+	width: 35%;
+	padding-right: 6rem;
+}
+
+.text-box--newsletter {
+	width: 75%;
+	border: none;
+	padding-right: 12rem;
+}
+
+.text-box--newsletter,
+.text-box--newsletter .text-box__title {
+	color: #00080c;
 }
 
 .stats {
@@ -368,6 +383,82 @@ img {
 	text-align: center;
 }
 
+.half-half__content *:last-child {
+	margin-bottom: 0;
+}
+
+
+.half-half--inverted .container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.half-half--inverted .half-half__image {
+	right: auto;
+	left: 0;
+}
+
+.newsletter {
+	padding: 12rem 0;
+	background-color: #fff;
+}
+
+.newsletter__container {
+	position: relative;
+}
+
+.newsletter__image {
+	width: 40%;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.form__input-wrapper {
+	margin-bottom: 2rem;
+}
+
+.input-wrapper {
+	position: relative;
+	padding-top: 1rem;
+}
+
+.input-wrapper__label {
+	margin-bottom: 0;
+	position: absolute;
+	top: calc(50% + 0.5rem);
+	left: 2rem;
+	transform: translateY(-50%);
+	transition: 0.3s all ease;
+}
+
+.input {
+	width: 100%;
+	padding: 0.5rem 2rem;
+	background-color: transparent;
+	outline: none;
+	border: none;
+	border-bottom: 2px solid #aaa;
+	transition: 0.2s all ease;
+}
+
+.input:focus {
+	border-bottom-color: #453188;
+}
+
+.input-wrapper__input:focus + .input-wrapper__label,
+.input--not-empty + .input-wrapper__label {
+	top: 0;
+	left: 0;
+	transform: scale(0.6);
+	opacity: 0.7;
+}
+
+.form__input-wrapper {
+	margin-bottom: 2rem;
+}
+
 /* ==== Vision CSS ==== */
 
 /* Scroll back up button*/
@@ -430,8 +521,6 @@ h3 {
 	position: absolute;
 	overflow: visible;
 }
-
-
 
 /*pins*/
 
@@ -517,37 +606,76 @@ h3 {
 	list-style: none;
 }
 
+.footer {
+	padding: 3rem 0 0.5rem;
+	background-color: #e7e7e7;
+}
+
+.footer-copyright {
+	text-align: center;
+	font-size: 0.8rem;
+	opacity: 0.7;
+}
+
 .footer-container {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 	flex-wrap: nowrap;
-	justify-content: space-around;
+	justify-content: space-between;
+}
 
-	width: 100%;
-	height: 45%;
-	min-height: 15rem;
-	background-color: #e7e7e7;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	opacity: 1;
+.footer-element-title {
+	text-transform: uppercase;
 }
 
 .footer-element {
-
-	height: auto;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
+	padding: 0 1rem;
 	color: #5c5c5c;
-	width: auto;
 	text-decoration: none;
 }
 
-.footer-element a {
-	align-items: center;
-	justify-content: start;
+.footer-element:first-child {
+	padding-left: 0;
+}
+
+.footer-element:last-child {
+	padding-right: 0;
+}
+
+.socials {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	display: flex;
+}
+
+.socials-item {
+	margin: 0;
+	padding: 0;
+}
+
+.socials-link {
+	display: block;
+	padding: 10px;
+}
+
+.socials-item:first-child .socials-link {
+	padding-left: 0;
+}
+
+.socials-icon {
+	fill: #00080c;
+	width: 2.5rem;
+}
+
+.socials-link:hover .socials-icon {
+	fill: #453188;
+}
+
+.quick-links {
+	list-style-type: none;
+	padding: 0;
 }
 
 .vision-content-container {
@@ -619,7 +747,7 @@ h3 {
 .vision-topVideo {
 	width: 100%;
 	height: 100%;
-	min-width: 100%
+	min-width: 100%;
 }
 
 
@@ -661,10 +789,10 @@ h3 {
 .team-container {
 		width:960px;
 		border-radius: 25px;
-    margin: 0 auto;
-    padding:10px 25px;
-    border:7px solid #5941A9;
-    background:#C7D3D4FF; }
+	margin: 0 auto;
+	padding:10px 25px;
+	border:7px solid #5941A9;
+	background:#C7D3D4FF; }
 
 .team-headers {
 	text-align:center;
