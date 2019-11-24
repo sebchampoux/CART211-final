@@ -51,18 +51,87 @@ function homePage() {
 }
 
 function homePageAnims() {
-	let heroTl = new TimelineMax({ paused: true });
-	var statsTl = new TimelineMax({ paused: true });
+	// Create the in timelines
+	var hero = document.querySelector('.hero-area');
+	hero.inTimeline = heroTl(hero);
+	var stats = document.querySelector('.stats');
+	stats.inTimeline = statsTl(stats);
+	var halfHalfs = document.querySelectorAll('.half-half');
+	halfHalfs.forEach(h => h.inTimeline = halfHalfTl(h));
+	var newsletter = document.querySelector('.newsletter');
+	newsletter.inTimeline = newsletterTl(newsletter);
 
-	var halfHalftl = new TimelineMax({ delay: 1 });
-	var halfHalfBG = document.querySelector('.half-half__content-bg');
-	halfHalftl.set(halfHalfBG, { transformOrigin: '0 0' });
+	var sectionsWithInAnim = [
+		hero,
+		stats
+	].concat(Array.from(halfHalfs)).concat([
+		newsletter
+	]);
 
-	halfHalftl.addLabel('in-bgs');
-	halfHalftl.from(halfHalfBG, 0.6, { scaleX: 0 }, 'in-bgs');
-	halfHalftl.add(tlAnimatedImage(document.querySelector('.half-half__image')), 'in-bgs+=0.2');
+	// Make sections appear on scroll
+	var controller = new ScrollMagic.Controller();
+	sectionsWithInAnim.forEach(section => {
+		new ScrollMagic.Scene({
+			triggerElement: section,
+			triggerHook: 'onEnter',
+			duration: 0,
+			offset: 350,
+			reverse: false
+		}).on('enter', e => section.inTimeline.delay(0.15).play())
+			.addTo(controller);
+	});
+}
 
-	halfHalftl.staggerFrom('.half-half__title, .half-half__text, .half-half .button', 1, { opacity: 0, ease: Power2.easeInOut }, 0.15);
+function heroTl(heroRoot) {
+	var textBox = heroRoot.querySelector('.text-box');
+
+	let tl = new TimelineMax({ paused: true });
+	tl.set(textBox, { transformOrigin: '100% 0' });
+
+	tl.addLabel('in-video');
+	tl.from(heroRoot.querySelector('.hero-area__video-mask'), 0.8, { x: '100%' }, 'in-video');
+	tl.from(heroRoot.querySelector('.featured-video'), 0.8, { x: '-100%' }, 'in-video');
+	tl.from(textBox, 0.6, { scaleX: 0 }, '-=0.3');
+	tl.staggerFrom(heroRoot.querySelectorAll('.text-box__title, .text-box__text, .text-box__btn-wrapper'), 1, { opacity: 0, x: '20%' }, 0.15);
+	tl.from(heroRoot.querySelector('.hero-area__trees-overlay'), 0.6, { opacity: 0 }, '-=0.5');
+	return tl;
+}
+
+function statsTl(statsRoot) {
+	var statsBg = statsRoot.querySelector('.stats__bg');
+
+	let tl = new TimelineMax({ paused: true });
+	tl.set(statsBg, { transformOrigin: '0 0' });
+	tl.from(statsBg, 0.7, { scaleY: 0 });
+	tl.addLabel('in-content', '-=0.2');
+	tl.from(statsRoot.querySelector('.stats__title'), 1, { y: '-50%', opacity: 0 }, 'in-content');
+	tl.staggerFrom(statsRoot.querySelectorAll('.stat'), 1, { opacity: 0, y: '-25%' }, 0.2, 'in-content+=0.2');
+	return tl;
+}
+
+function halfHalfTl(halfHalfRoot) {
+	let tl = new TimelineMax({ paused: true });
+	var halfHalfBG = halfHalfRoot.querySelector('.half-half__content-bg');
+	tl.set(halfHalfBG, { transformOrigin: '0 0' });
+
+	tl.addLabel('in-bgs');
+	tl.from(halfHalfBG, 0.6, { scaleX: 0 }, 'in-bgs');
+	tl.add(tlAnimatedImage(halfHalfRoot.querySelector('.half-half__image')), 'in-bgs');
+	tl.staggerFrom(halfHalfRoot.querySelectorAll('.half-half__title, .half-half__text, .half-half__btn-wrapper'), 1, { opacity: 0, ease: Power2.easeInOut }, 0.15);
+	return tl;
+}
+
+function newsletterTl(newsletterRoot) {
+	var textBox = newsletterRoot.querySelector('.text-box');
+	var image = newsletterRoot.querySelector('.newsletter__image');
+
+	let tl = new TimelineMax({ paused: true });
+	tl.set(textBox, { transformOrigin: '0 0' });
+	tl.set(image, { y: '-50%' });
+	tl.from(textBox, 0.8, { scaleX: 0 });
+	tl.from(image, 0.8, { x: '20%', opacity: 0 });
+	tl.staggerFrom(newsletterRoot.querySelectorAll('.text-box__title, .text-box__text, .input-wrapper, .text-box__btn-wrapper'), 0.6, { x: '-10%', opacity: 0 }, 0.2, '-=0.5');
+	return tl;
 }
 
 function tlAnimatedImage(animatedImageObject) {
@@ -82,15 +151,18 @@ function homePageNewsletter() {
 		return input.value === "" || input.value === null || input.value === undefined;
 	}
 
+	function validateInput(input) {
+		if (inputIsEmpty(input)) {
+			input.classList.toggle('input--not-empty', false);
+		} else {
+			input.classList.toggle('input--not-empty', true);
+		}
+	}
+
 	var inputs = document.querySelectorAll('.input');
 	inputs.forEach(input => {
-		input.addEventListener('blur', e => {
-			if (inputIsEmpty(input)) {
-				input.classList.toggle('input--not-empty', false);
-			} else {
-				input.classList.toggle('input--not-empty', true);
-			}
-		});
+		validateInput(input);
+		input.addEventListener('blur', e => validateInput(input));
 	});
 }
 
@@ -115,63 +187,57 @@ function visionPage() {
 	backUpButton.addEventListener("click", goToTop);
 
 	//fade effect
-AOS.init();
+	AOS.init();
 
-//js for the scroll back up button
-var backUpButton = document.getElementById("backUpBtn");
+	//js for the scroll back up button
+	var backUpButton = document.getElementById("backUpBtn");
 
-window.onscroll = function() {scrollDown()};
+	window.onscroll = function () { scrollDown() };
 
-function scrollDown() {
-  if (window.scrollY > 20 ) {
-    backUpButton.style.display = "block";
-  } 
-  else {
-    backUpButton.style.display = "none";
-  }
+	function scrollDown() {
+		if (window.scrollY > 20) {
+			backUpButton.style.display = "block";
+		}
+		else {
+			backUpButton.style.display = "none";
+		}
+	}
+
+	backUpButton.addEventListener("click", goToTop);
+
+	function goToTop() {
+		window.scrollTo({ top: 0 });
+	}
+
+	//map pins
+
+	$('#usa-1').click(function () {
+		$(this).toggleClass('usa1-hover');
+	});
+
+	$('#usa-2').click(function () {
+		$(this).toggleClass('usa2-hover');
+	});
+
+	$('#canada-pin').click(function () {
+		$(this).toggleClass('canada-pin-change');
+		$('#canada-beaver').toggleClass('canada-beaver-change');
+	});
+
+	/*random location pin*/
+
+	var africa = document.getElementById("africa1");
+	africa.addEventListener("click", randomPosition);
+
+
+	function randomPosition() {
+		var posx = (Math.random() * 100) + 1;
+		var posy = (Math.random() * 100) + 1;
+		africa.style.top = posy + '%';
+		africa.style.left = posx + '%';
+	}
+
+	$('#australia1').click(function () {
+		$(this).toggleClass('australia-fun');
+	});
 }
-
-backUpButton.addEventListener("click",goToTop);
-
-function goToTop() {
-  window.scrollTo({top:0}); 
-}
-
-//map pins
-
-$('#usa-1').click(function() {
-  $(this).toggleClass('usa1-hover');
-});
-
-$('#usa-2').click(function() {
-  $(this).toggleClass('usa2-hover');
-});
-
-$('#canada-pin').click(function() {
-	$(this).toggleClass('canada-pin-change');
-	$('#canada-beaver').toggleClass('canada-beaver-change');
-});
-
-/*random location pin*/
-
-var africa = document.getElementById("africa1");
-africa.addEventListener("click", randomPosition);
-
-
-function randomPosition (){
-	
-var posx = (Math.random() * 100) + 1;
-var posy = (Math.random() * 100) + 1;
-africa.style.top = posy + '%';
-africa.style.left = posx + '%';
-}
-
-$('#australia1').click(function() {
-	$(this).toggleClass('australia-fun');
-  });
-
-
-
-}
-
-

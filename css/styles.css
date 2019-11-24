@@ -191,6 +191,7 @@ img {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	overflow: hidden;
 }
 
 .hero-area__video-wrapper {
@@ -200,6 +201,12 @@ img {
 	top: 0;
 	left: 0;
 	z-index: -1;
+}
+
+.hero-area__video-mask {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
 }
 
 .hero-area__trees-overlay {
@@ -257,8 +264,22 @@ img {
 }
 
 .stats {
-	background-color: #453188;
+	background-color: #fff;
 	padding: 4.5rem 0;
+	position: relative;
+}
+
+.stats__bg {
+	width: 100%;
+	height: 100%;
+	background-color: #453188;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.stats__container {
+	position: relative;
 }
 
 .stats__title {

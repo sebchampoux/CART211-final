@@ -18,9 +18,11 @@
 	<div class="js-nav-placeholder"></div>
 	<header class="hero-area">
 		<div class="hero-area__video-wrapper">
-			<video class="featured-video" autoplay loop muted poster="">
-				<source src="imgs/header__video.mp4" type="video/mp4">
-			</video>
+			<div class="hero-area__video-mask">
+				<video class="featured-video" autoplay loop muted poster="">
+					<source src="imgs/header__video.mp4" type="video/mp4">
+				</video>
+			</div>
 		</div>
 		<div class="text-box text-box--hero">
 			<h1 class="text-box__title">We mine because<br>we don't care</h1>
@@ -34,7 +36,8 @@
 		<img class="hero-area__trees-overlay" src="imgs/trees-skyline.svg" alt="Trees overlay">
 	</header>
 	<section class="stats">
-		<div class="container">
+		<div class="stats__bg"></div>
+		<div class="container stats__container">
 			<h1 class="stats__title">In short, this project is...</h1>
 			<div class="stats__stats-wrapper">
 				<article class="stat">
