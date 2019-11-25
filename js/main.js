@@ -48,6 +48,21 @@ function importPagePortion(filename, placeholderClass) {
 function homePage(navLoadPromise) {
 	navLoadPromise.then(homePageAnims);
 	homePageNewsletter();
+
+	var surpriseTriggers = document.querySelectorAll('.js-surprise-trigger');
+	surpriseTriggers.forEach(el => el.addEventListener('click', trollTheHomePage));
+
+	document.addEventListener('keydown', e => {
+		if (e.keyCode === 83) {
+			trollTheHomePage();
+		}
+	});
+
+	document.querySelector('.js-newsletter-trigger').addEventListener('click', e => {
+		e.preventDefault();
+		var email = document.getElementById('email').value;
+		alert('Hello ' + email + ', I just sent your email to the NSA.\n\nJust kidding, they already had it.');
+	})
 }
 
 function homePageAnims() {
@@ -176,6 +191,15 @@ function homePageNewsletter() {
 		validateInput(input);
 		input.addEventListener('blur', e => validateInput(input));
 	});
+}
+
+function trollTheHomePage() {
+	var images = document.querySelectorAll('img');
+	images.forEach(img => img.src = 'imgs/troll' + randomInt(4) + '.jpg');
+}
+
+function randomInt(max) {
+	return Math.round(Math.random() * max);
 }
 
 function visionPage() {
