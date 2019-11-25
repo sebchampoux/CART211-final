@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', e => {
-
-	importPagePortion('main-nav', 'js-nav-placeholder');
+	
+	var navLoadPromise = importPagePortion('main-nav', 'js-nav-placeholder');
 	importPagePortion('footer', 'js-footer-placeholder');
 
 	var body = document.querySelector('body');
 	if (body.classList.contains('home-page')) {
-		homePage();
+		homePage(navLoadPromise);
 	} else if (body.classList.contains('vision')) {
 		visionPage();
 	}
@@ -45,8 +45,8 @@ function importPagePortion(filename, placeholderClass) {
 	});
 }
 
-function homePage() {
-	homePageAnims();
+function homePage(navLoadPromise) {
+	navLoadPromise.then(homePageAnims);
 	homePageNewsletter();
 }
 
@@ -77,9 +77,21 @@ function homePageAnims() {
 			duration: 0,
 			offset: 350,
 			reverse: false
-		}).on('enter', e => section.inTimeline.delay(0.15).play())
+		})
+			.on('enter', e => section.inTimeline.delay(0.15).play())
 			.addTo(controller);
 	});
+
+	// Add switches for the header
+	var mainNav = document.querySelector('.main-nav');
+	new ScrollMagic.Scene({
+		triggerElement: stats,
+		triggerHook: 0.75,
+		reverse: true,
+	})
+		.on('enter', e => mainNav.classList.remove('main-nav--over-hero'))
+		.on('leave', e => mainNav.classList.add('main-nav--over-hero'))
+		.addTo(controller);
 }
 
 function heroTl(heroRoot) {
