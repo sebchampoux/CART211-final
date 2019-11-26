@@ -1,15 +1,22 @@
 document.addEventListener('DOMContentLoaded', e => {
+	var body = document.querySelector('body');
 	
-	var navLoadPromise = importPagePortion('main-nav', 'js-nav-placeholder');
+	var navLoadPromise = importPagePortion('main-nav', 'js-nav-placeholder').then(() => {
+		if (body.classList.contains('home-page')) {
+			document.querySelector('.main-nav').classList.add('main-nav--over-hero');
+		}
+	});
 	importPagePortion('footer', 'js-footer-placeholder');
 
-	var body = document.querySelector('body');
 	if (body.classList.contains('home-page')) {
 		homePage(navLoadPromise);
 	} else if (body.classList.contains('vision')) {
 		visionPage();
+	} else if (body.classList.contains('careers')) {
+		careersPage();
 	}
 
+	formsFunctionnality();
 });
 
 /**
@@ -47,7 +54,6 @@ function importPagePortion(filename, placeholderClass) {
 
 function homePage(navLoadPromise) {
 	navLoadPromise.then(homePageAnims);
-	homePageNewsletter();
 
 	var surpriseTriggers = document.querySelectorAll('.js-surprise-trigger');
 	surpriseTriggers.forEach(el => el.addEventListener('click', trollTheHomePage));
@@ -173,7 +179,7 @@ function tlAnimatedImage(animatedImageObject) {
 	return tl;
 }
 
-function homePageNewsletter() {
+function formsFunctionnality() {
 	function inputIsEmpty(input) {
 		return input.value === "" || input.value === null || input.value === undefined;
 	}
@@ -276,4 +282,54 @@ function visionPage() {
 	$('#australia1').click(function () {
 		$(this).toggleClass('australia-fun');
 	});
+}
+
+function careersPage() {
+	var collapsibles = document.querySelectorAll('.collapsible');
+	collapsibles.forEach(c => new Collapsible(c));
+
+	document.querySelector('.js-apply-trigger').addEventListener('click', e => {
+		e.preventDefault();
+		window.open('https://jobs.mojang.com/jobs', '_self');
+	});
+}
+
+class Collapsible {
+	constructor(rootElement) {
+		this.rootElement = rootElement;
+		this.head = rootElement.querySelector('.collapsible__head');
+		this.contentContainer = rootElement.querySelector('.collapsible__content')
+		this.contentHeight = this.contentContainer.getBoundingClientRect().height;
+		this.content = this.contentContainer.children;
+		
+		this.setupTls();
+		this.attachEvents();
+	}
+
+	setupTls() {
+		TweenMax.set(this.contentContainer, { transformOrigin: '0 0' });
+
+		this.openTl = new TimelineMax({ paused: true });
+		this.openTl.from(this.contentContainer, 0.1, { display: 'none' });
+		this.openTl.from(this.content, 0.5, { opacity: 0 });
+	}
+
+	attachEvents() {
+		this.head.addEventListener('click', () => {
+			if (this.rootElement.classList.contains('collapsible--open')) {
+				this.closeCollapsible();
+			} else {
+				this.openCollapsible();
+			}
+			this.rootElement.classList.toggle('collapsible--open');
+		});
+	}
+
+	openCollapsible() {
+		this.openTl.play();
+	}
+
+	closeCollapsible() {
+		this.openTl.reverse();
+	}
 }

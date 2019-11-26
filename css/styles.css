@@ -566,6 +566,91 @@ h3 {
 	overflow: visible;
 }
 
+.header {
+	background-position: center;
+	background-size: cover;
+	padding: 8rem 0 4rem;
+}
+
+.header__title {
+	text-align: right;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.main {
+	padding: 3rem 0;
+}
+
+.collapsible {
+	border-bottom: 1px solid #453188;
+}
+
+.collapsible:first-of-type {
+	border-top: 1px solid #453188;
+}
+
+.collapsible:last-of-type {
+	margin-bottom: 3rem;
+}
+
+.collapsible__head {
+	position: relative;
+	padding: 1rem;
+}
+
+.collapsible__head:hover {
+	cursor: pointer;
+}
+
+.collapsible__head::after {
+	content: url(../imgs/caret-down-solid.svg);
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 2rem;
+	transform: translateY(-50%);
+	width: 1.5rem;
+	transition: 0.2s all ease;
+}
+
+.collapsible--open .collapsible__head::after {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+.collapsible__title {
+	text-transform: uppercase;
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+.collapsible__subtitle {
+	opacity: 0.7;
+	font-size: 1.5rem;
+	margin-bottom: 0;
+}
+
+.collapsible__content {
+	padding: 1rem 1rem 2.5rem;
+}
+
+.collapsible__content::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.collapsible__img {
+	float: right;
+	max-width: 20%;
+	max-height: 300px;
+	margin-left: 3rem;
+}
+
+.text-wrapper {
+	margin-bottom: 2.5rem;
+}
+
 /*pins*/
 
 .russia {
