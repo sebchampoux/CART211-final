@@ -771,6 +771,10 @@ h3 {
 	padding-right: 0;
 }
 
+.footer-coordinate {
+	margin-bottom: 5px;
+}
+
 .socials {
 	list-style-type: none;
 	margin: 0;
