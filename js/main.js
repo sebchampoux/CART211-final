@@ -195,16 +195,19 @@ function visionPage() {
 	$('#iron-section').click(function () {
 		$('#iron-id').css("opacity", "0" );
 		$('#iron-section').toggleClass('iron-background');
+		megamind();
 	});
 
 	$('#gold-section').click(function () {
 		$('#gold-id').css("opacity", "0" );
 		$('#gold-section').toggleClass('gold-background');
+		megamind();
 	});
 
 	$('#diorite-section').click(function () {
 		$('#diorite-id').css("opacity", "0" );
 		$('#diorite-section').toggleClass('diorite-background');
+		megamind();
 	});
 
 	$('#diamond-section').click(function () {
@@ -215,6 +218,7 @@ function visionPage() {
 	$('#granite-section').click(function () {
 		$('#granite-id').css("opacity", "0" );
 		$('#granite-section').toggleClass('granite-background');
+		megamind();
 	});
 
 	$('#emerald-section').click(function () {
@@ -225,13 +229,31 @@ function visionPage() {
 	$('#coal-section').click(function () {
 		$('#coal-id').css("opacity", "0" );
 		$('#coal-section').toggleClass('coal-background');
+		megamind();
 	});
 
+	//create opacity variables
+	 	
 
 
-
-
+function megamind () {
 	
+	if (($('#coal-id').css('opacity') == 0) && ($('#granite-id').css('opacity') == 0) && ($('#gold-id').css('opacity') == 0)  && ($('#diorite-id').css('opacity') == 0)  && ($('#iron-id').css('opacity') == 0)  && ($('#diamond-id').css('opacity') == 1)  && ($('#emerald-id').css('opacity') == 1)) {
+		changePicture();
+		}	
+	else
+	{
+		null;
+	}
+
+}
+	function changePicture() {
+		$('#slides2-id').css( "z-index", "7" );
+	}
+
+
+
+
 	//js for error button
 	var errorButton = document.getElementById("animationButton");
 	errorButton.addEventListener("click", errorFunction);

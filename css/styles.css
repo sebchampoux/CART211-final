@@ -1041,6 +1041,7 @@ h3 {
 }
 
 
+
 .block-container {
 	display: flex;
 	flex-direction: column;
@@ -1080,6 +1081,22 @@ h3 {
 }
 .slides-container {
 	max-width: 58%;
+	display: flex;
+}
+
+
+.slides1-class {
+	position: absolute;
+	z-index: 5;
+	max-width: 58%;
+	flex-basis: auto;
+
+}
+.slides2-class {
+	z-index: 3;
+	position: relative;
+	top: 0px;
+	left: 0px;
 }
 
 /*-------END --------*/
