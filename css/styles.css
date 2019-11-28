@@ -822,6 +822,11 @@ h3 {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	z-index: 30;
+
+}
+.navbar-hide {
+	position: relative;
 
 }
 
@@ -859,6 +864,7 @@ h3 {
 	text-decoration: none;
 }
 
+
 .vision-navbar a:hover {
 	background-color: #d8d8d8;
 }
@@ -879,10 +885,334 @@ h3 {
 
 .vision-topVideo {
 	width: 100%;
-	height: 100%;
+	height: 100%;               
 	min-width: 100%;
 }
 
+
+.sus_text {
+	width: 30%;
+	margin: 1% 1%;
+	z-index: 1;
+	position: relative;
+}
+
+#animationButton {
+	margin-left: 1%;
+	width: 20%;
+	align-content: flex-start;
+	z-index: 3;
+	position: relative;
+
+}
+
+.light-container .lightswitch {
+	top: 78%;
+	left: 79%;
+}
+
+#sustainability .beemovie {
+	font-size: 1em;
+	color: #f9f9f9;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	text-align: justify;
+	overflow: hidden;
+	opacity: 0;
+
+}
+
+.light-container .closedlight {
+	top: 78%;
+	left: 78.5%;
+}
+
+.lightswitch {
+	position: absolute;
+		width: 5%;
+		z-index: 7;
+}
+
+.closedlight {
+	position: absolute;
+	width: 6%;
+	z-index: 6;
+}
+
+#sustainability {
+	background-image: url(../imgs/wind-turbine.png);
+	background-size: cover;
+	opacity: 1;
+	
+}
+
+
+
+.error400 {
+	opacity: 0;
+	background-color: #555;
+	color: #eeeeee;
+	width: 100%;
+	font-size: 4em;
+}
+
+
+/*what we do*/
+
+
+.opacityToZero {
+	opacity: 0;
+	z-index: 5;
+}
+
+.iron-class {
+	background-image: url("../imgs/grey-square.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.diamond-class {
+	background-image: url("../imgs/grey-square.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.granite-class {
+	background-image: url("../imgs/grey-square.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.diorite-class {
+	background-image: url("../imgs/grey-square.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.coal-class {
+	background-image: url("../imgs/grey-square.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.emerald-class {
+	background-image: url("../imgs/grey-square.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.gold-class {
+	background-image: url("../imgs/grey-square.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.block-container li {
+	flex: 0 1 auto;
+	width: 100%;
+	height: 100%;
+	
+}
+
+.iron-background {
+	background-image: url("../imgs/iron.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.gold-background {
+	background-image: url("../imgs/gold.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.coal-background {
+	background-image: url("../imgs/coal.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.emerald-background {
+	background-image: url("../imgs/Emerald.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+
+}
+
+.diamond-background {
+	background-image: url("../imgs/diamond.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.granite-background {
+	background-image: url("../imgs/granite.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.diorite-background {
+	background-image: url("../imgs/diorite.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+/*Squares*/
+
+.gold-square {
+	opacity: 1;
+	z-index: 5;
+}
+
+.granite-square {
+	opacity: 1;
+	z-index: 5;
+
+}
+
+.iron-square {
+	opacity: 1;
+	z-index: 5;
+}
+
+.coal-square {
+	opacity: 1;
+	z-index: 5;
+}
+
+.emerald-square {
+	opacity: 1;
+	z-index: 5;
+}
+
+.diorite-square {
+	opacity: 1;
+	z-index: 5;
+}
+
+.diamond-square {
+	opacity: 1;
+	z-index: 5;
+}
+
+
+
+.gold {
+	opacity: 0;
+	position: relative;
+	z-index: 2;
+}
+
+.granite {
+	opacity: 0;
+	position: relative;
+	z-index: 2;
+}
+
+.iron {
+	opacity: 0;
+	position: relative;
+	z-index: 2;
+}
+
+.coal {
+	opacity: 0;
+	position: relative;
+	z-index: 2;
+}
+
+.emerald {
+	opacity: 0;
+	position: relative;
+	z-index: 2;
+
+}
+
+.diorite {
+	opacity: 0;
+	position: relative;
+	z-index: 2;
+}
+
+.diamond {
+	opacity: 0;
+	position: relative;
+	z-index: 2;
+}
+
+/*what we do content*/
+
+#what-we-do {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: auto;
+	
+}
+
+
+
+.block-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: flex-start;
+	flex-wrap: nowrap;
+	height: auto;
+	width: 9%;
+	list-style: none;
+	z-index: 1;
+
+}
+.what-we-do-content ul {
+	flex: 0 1 auto;
+}
+
+.short-paragraph {
+	text-align: justify;
+	width: 23%;
+	max-height: 100%;
+	list-style: none;
+	font-size: 2.4vmin;
+}
+
+.what-we-do-content {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+	max-height: 60%;
+	align-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: auto;
+}
+.slides-container {
+	max-width: 58%;
+	display: flex;
+}
+
+
+.slides1-class {
+	position: absolute;
+	z-index: 5;
+	max-width: 45%;
+	flex-basis: auto;
+
+}
+.slides2-class {
+	z-index: 3;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	max-width: 100%;
+}
+
+/*-------END --------*/
 
 .teambak {
 	background-image:url("../imgs/stuff.jpg");

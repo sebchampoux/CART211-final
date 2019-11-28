@@ -212,6 +212,7 @@ function visionPage() {
 	//js for the scroll back up button
 	var backUpButton = document.getElementById("backUpBtn");
 
+
 	function scrollDown() {
 		if (window.scrollY > 20) {
 			backUpButton.style.display = "block";
@@ -231,14 +232,116 @@ function visionPage() {
 	//fade effect
 	AOS.init();
 
+	//block switch
+
+	$('#iron-section').click(function () {
+		$('#iron-id').css("opacity", "0" );
+		$('#iron-section').toggleClass('iron-background');
+		megamind();
+	});
+
+	$('#gold-section').click(function () {
+		$('#gold-id').css("opacity", "0" );
+		$('#gold-section').toggleClass('gold-background');
+		megamind();
+	});
+
+	$('#diorite-section').click(function () {
+		$('#diorite-id').css("opacity", "0" );
+		$('#diorite-section').toggleClass('diorite-background');
+		megamind();
+	});
+
+	$('#diamond-section').click(function () {
+		$('#diamond-id').css("opacity", "0" );
+		$('#diamond-section').toggleClass('diamond-background');
+	});
+
+	$('#granite-section').click(function () {
+		$('#granite-id').css("opacity", "0" );
+		$('#granite-section').toggleClass('granite-background');
+		megamind();
+	});
+
+	$('#emerald-section').click(function () {
+		$('#emerald-id').css("opacity", "0" );
+		$('#emerald-section').toggleClass('emerald-background');
+	});
+
+	$('#coal-section').click(function () {
+		$('#coal-id').css("opacity", "0" );
+		$('#coal-section').toggleClass('coal-background');
+		megamind();
+	});
+
+	//create opacity variables
+	 	
+
+
+function megamind () {
+	
+	if (($('#coal-id').css('opacity') == 0) && ($('#granite-id').css('opacity') == 0) && ($('#gold-id').css('opacity') == 0)  && ($('#diorite-id').css('opacity') == 0)  && ($('#iron-id').css('opacity') == 0)  && ($('#diamond-id').css('opacity') == 1)  && ($('#emerald-id').css('opacity') == 1)) {
+		changePicture();
+		}	
+	else
+	{
+		null;
+	}
+
+}
+	function changePicture() {
+		$('#slides2-id').css( "z-index", "7" );
+	}
+
+
+
+
+	//js for error button
+	var errorButton = document.getElementById("animationButton");
+	errorButton.addEventListener("click", errorFunction);
+
+	function errorFunction() {
+		$("#sustainability").css( "opacity", "0" );
+		$(".error400").css( "opacity", "1" );
+	}
+
+	//swap light switch on click
+
+	var lightswitchvar = document.getElementById("lightswitchid");
+	lightswitchvar.addEventListener("click", lightFunction);
+
+	function lightFunction() {
+		$(".lightswitch").css( "z-index", "6" );
+		$(".closedlight").css( "z-index", "7" );
+		$("#beemovie-id").css( "opacity", "1" );
+		$("#sustainability").css( "background-color", "#181818" );
+		$("#animationButton").css( "opacity", "0" );
+
+	}
+
+
+	var closedlightvar = document.getElementById("closedlightid");
+	closedlightvar.addEventListener("click", lightFunctionclosed);
+
+	function lightFunctionclosed() {
+		$(".lightswitch").css( "z-index", "7" );
+		$(".closedlight").css( "z-index", "6" );
+		$("#beemovie-id").css( "opacity", "0" );	
+		$("#sustainability").css( "background-color", "#f9f9f9" );
+		$("#animationButton").css( "opacity", "1" );	
+	}
+
 	//js for the scroll back up button
 	var backUpButton = document.getElementById("backUpBtn");
+
+
 
 	window.onscroll = function () { scrollDown() };
 
 	function scrollDown() {
 		if (window.scrollY > 20) {
 			backUpButton.style.display = "block";
+			$( ".main-nav" ).css( "position", "absolute" );
 		}
 		else {
 			backUpButton.style.display = "none";
