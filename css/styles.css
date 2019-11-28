@@ -1216,7 +1216,7 @@ h3 {
 /*-------END --------*/
 
 .teambak {
-	background-image:url("../imgs/stuff.jpg");
+	background-color:white
 	background-repeat: no-repeat;
 	background-position: center top;
   background-attachment: scroll;
@@ -1256,10 +1256,13 @@ h3 {
 	margin: 0 auto;
 	padding:10px 25px;
 	border:7px solid #5941A9;
-	background:#C7D3D4FF; }
+	background:#C7D3D4FF;
+	font-family: 'BedsteadRegular';
+}
 
 .team-headers {
 	text-align:center;
+	font-family: 'BedsteadRegular';
 }
 
 .poop {
@@ -1289,4 +1292,10 @@ h3 {
 
 .Can{
   float:right;
+	border:7px solid #5941A9;
+}
+
+.Cannot{
+	float:left;
+	border:7px solid #5941A9;
 }
