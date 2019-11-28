@@ -77,12 +77,17 @@ img {
 .main-nav {
 	display: flex;
 	justify-content: space-between;
-	width: calc(100% - 60px);
+	width: 100%;
+	padding-left: 1rem;
+	background-color: #fff;
+	box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.4);
 
 	position: fixed;
-	top: 40px;
-	left: 30px;
+	top: 0;
+	left: 0;
 	z-index: 10;
+
+	transition: 0.3s all ease;
 }
 
 .main-nav__separator {
@@ -93,8 +98,11 @@ img {
 }
 
 .logo-wrapper {
-	display: flex;;
+	display: flex;
 	align-items: center;
+	padding: 0.5rem;
+
+	transition: 0.3 all ease;
 }
 
 .logo-wrapper:hover {
@@ -121,7 +129,8 @@ img {
 
 .logo {
 	vertical-align: bottom;
-	height: 100px;
+	height: 70px;
+	transition: 0.3s all ease;
 }
 
 .logo__left {
@@ -150,7 +159,7 @@ img {
 
 .menu__link {
 	display: block;
-	padding: 30px 40px;
+	padding: 20px 40px;
 	color: #fff;
 	text-transform: uppercase;
 	height: 100%;
@@ -171,17 +180,31 @@ img {
 	background-color: #e7e7e7;
 }
 
-.main-nav--inverted .logo__left,
-.main-nav--inverted .logo__right {
+.main-nav--over-hero {
+	padding: 40px 30px 0;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.main-nav--over-hero .logo {
+	height: 100px;
+}
+
+.main-nav--over-hero .logo-wrapper {
+	padding: 0;
+}
+
+.main-nav--over-hero .logo__left,
+.main-nav--over-hero .logo__right {
 	fill: #fff;
 }
 
-.main-nav--inverted .logo-wrapper__company-name,
-.main-nav--inverted .logo-wrapper__slogan {
+.main-nav--over-hero .logo-wrapper__company-name,
+.main-nav--over-hero .logo-wrapper__slogan {
 	color: #fff;
 }
 
-.main-nav--inverted .main-nav__separator {
+.main-nav--over-hero .main-nav__separator {
 	border-color: #fff;
 }
 
@@ -543,6 +566,91 @@ h3 {
 	overflow: visible;
 }
 
+.header {
+	background-position: center;
+	background-size: cover;
+	padding: 8rem 0 4rem;
+}
+
+.header__title {
+	text-align: right;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.main {
+	padding: 3rem 0;
+}
+
+.collapsible {
+	border-bottom: 1px solid #453188;
+}
+
+.collapsible:first-of-type {
+	border-top: 1px solid #453188;
+}
+
+.collapsible:last-of-type {
+	margin-bottom: 3rem;
+}
+
+.collapsible__head {
+	position: relative;
+	padding: 1rem;
+}
+
+.collapsible__head:hover {
+	cursor: pointer;
+}
+
+.collapsible__head::after {
+	content: url(../imgs/caret-down-solid.svg);
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 2rem;
+	transform: translateY(-50%);
+	width: 1.5rem;
+	transition: 0.2s all ease;
+}
+
+.collapsible--open .collapsible__head::after {
+	transform: translateY(-50%) rotate(180deg);
+}
+
+.collapsible__title {
+	text-transform: uppercase;
+	font-size: 2rem;
+	margin-bottom: 0.5rem;
+}
+
+.collapsible__subtitle {
+	opacity: 0.7;
+	font-size: 1.5rem;
+	margin-bottom: 0;
+}
+
+.collapsible__content {
+	padding: 1rem 1rem 2.5rem;
+}
+
+.collapsible__content::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.collapsible__img {
+	float: right;
+	max-width: 20%;
+	max-height: 300px;
+	margin-left: 3rem;
+}
+
+.text-wrapper {
+	margin-bottom: 2.5rem;
+}
+
 /*pins*/
 
 .russia {
@@ -661,6 +769,10 @@ h3 {
 
 .footer-element:last-child {
 	padding-right: 0;
+}
+
+.footer-coordinate {
+	margin-bottom: 5px;
 }
 
 .socials {
