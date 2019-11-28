@@ -885,7 +885,7 @@ h3 {
 
 .vision-topVideo {
 	width: 100%;
-	height: 100%;               
+	height: 100%;
 	min-width: 100%;
 }
 
@@ -947,7 +947,7 @@ h3 {
 	background-image: url(../imgs/wind-turbine.png);
 	background-size: cover;
 	opacity: 1;
-	
+
 }
 
 
@@ -1013,7 +1013,7 @@ h3 {
 	flex: 0 1 auto;
 	width: 100%;
 	height: 100%;
-	
+
 }
 
 .iron-background {
@@ -1149,7 +1149,7 @@ h3 {
 	flex-direction: column;
 	justify-content: space-between;
 	height: auto;
-	
+
 }
 
 
@@ -1210,7 +1210,7 @@ h3 {
 	top: 0px;
 	left: 0px;
 	max-width: 100%;
-	
+
 }
 
 /*-------END --------*/
@@ -1285,4 +1285,8 @@ h3 {
 /* Change the link color to #111 (black) on hover */
 .poop li a:hover {
   background-color: #111;
+}
+
+.Can{
+  float:right;
 }
