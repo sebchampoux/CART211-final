@@ -1088,7 +1088,7 @@ h3 {
 .slides1-class {
 	position: absolute;
 	z-index: 5;
-	max-width: 58%;
+	max-width: 45%;
 	flex-basis: auto;
 
 }
@@ -1097,6 +1097,7 @@ h3 {
 	position: relative;
 	top: 0px;
 	left: 0px;
+	max-width: 100%;
 }
 
 /*-------END --------*/
