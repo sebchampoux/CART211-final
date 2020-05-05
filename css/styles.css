@@ -885,7 +885,7 @@ h3 {
 
 .vision-topVideo {
 	width: 100%;
-	height: 100%;               
+	height: 100%;
 	min-width: 100%;
 }
 
@@ -947,7 +947,7 @@ h3 {
 	background-image: url(../imgs/wind-turbine.png);
 	background-size: cover;
 	opacity: 1;
-	
+
 }
 
 
@@ -1013,7 +1013,7 @@ h3 {
 	flex: 0 1 auto;
 	width: 100%;
 	height: 100%;
-	
+
 }
 
 .iron-background {
@@ -1149,7 +1149,7 @@ h3 {
 	flex-direction: column;
 	justify-content: space-between;
 	height: auto;
-	
+
 }
 
 
@@ -1210,13 +1210,13 @@ h3 {
 	top: 0px;
 	left: 0px;
 	max-width: 100%;
-	
+
 }
 
 /*-------END --------*/
 
 .teambak {
-	background-image:url("../imgs/stuff.jpg");
+	background-color:white
 	background-repeat: no-repeat;
 	background-position: center top;
   background-attachment: scroll;
@@ -1256,10 +1256,13 @@ h3 {
 	margin: 0 auto;
 	padding:10px 25px;
 	border:7px solid #5941A9;
-	background:#C7D3D4FF; }
+	background:#C7D3D4FF;
+	font-family: 'BedsteadRegular';
+}
 
 .team-headers {
 	text-align:center;
+	font-family: 'BedsteadRegular';
 }
 
 .poop {
@@ -1267,7 +1270,7 @@ h3 {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #5941A9;
 }
 
 .poop li {
@@ -1285,4 +1288,14 @@ h3 {
 /* Change the link color to #111 (black) on hover */
 .poop li a:hover {
   background-color: #111;
+}
+
+.Can{
+  float:right;
+	border:7px solid #5941A9;
+}
+
+.Cannot{
+	float:left;
+	border:7px solid #5941A9;
 }

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', e => {
 	var body = document.querySelector('body');
-	
+
 	var navLoadPromise = importPagePortion('main-nav', 'js-nav-placeholder').then(() => {
 		if (body.classList.contains('home-page')) {
 			document.querySelector('.main-nav').classList.add('main-nav--over-hero');
@@ -32,7 +32,7 @@ function parseStringToHTML(text) {
 
 /**
  * Loads and appends a page portion
- * 
+ *
  * @param {String} filename filename of the page portion (excluding the directory and the extension)
  * @param {String} placeholderClass class of the placeholder HTML element that will be replaced by the inserted element
  * @returns {Promise}
@@ -275,14 +275,14 @@ function visionPage() {
 	});
 
 	//create opacity variables
-	 	
+
 
 
 function megamind () {
-	
+
 	if (($('#coal-id').css('opacity') == 0) && ($('#granite-id').css('opacity') == 0) && ($('#gold-id').css('opacity') == 0)  && ($('#diorite-id').css('opacity') == 0)  && ($('#iron-id').css('opacity') == 0)  && ($('#diamond-id').css('opacity') == 1)  && ($('#emerald-id').css('opacity') == 1)) {
 		changePicture();
-		}	
+		}
 	else
 	{
 		null;
@@ -326,9 +326,9 @@ function megamind () {
 	function lightFunctionclosed() {
 		$(".lightswitch").css( "z-index", "7" );
 		$(".closedlight").css( "z-index", "6" );
-		$("#beemovie-id").css( "opacity", "0" );	
+		$("#beemovie-id").css( "opacity", "0" );
 		$("#sustainability").css( "background-color", "#f9f9f9" );
-		$("#animationButton").css( "opacity", "1" );	
+		$("#animationButton").css( "opacity", "1" );
 	}
 
 	//js for the scroll back up button
@@ -404,7 +404,7 @@ class Collapsible {
 		this.contentContainer = rootElement.querySelector('.collapsible__content')
 		this.contentHeight = this.contentContainer.getBoundingClientRect().height;
 		this.content = this.contentContainer.children;
-		
+
 		this.setupTls();
 		this.attachEvents();
 	}
